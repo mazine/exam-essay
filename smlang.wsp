@@ -1,0 +1,13 @@
+[main]
+.\source\main.tex
+
+[texfiles]
+.\source\actual.tex
+.\source\execution.tex
+.\source\existingProblems.tex
+.\source\existingSMLangs.tex
+.\source\features.tex
+.\source\javaPlatform.tex
+.\source\mpsStructure.tex
+.\source\structure.tex
+

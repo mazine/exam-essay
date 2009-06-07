@@ -1,0 +1,220 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage[pdftex]{graphicx}
+%opening
+\title{Разработка языка для автоматного программирования в среде  MPS}
+\author{Мазин М. А., Гуров В. С.}
+
+\newcommand{\TBD}{\par{\LARGE TO BE DONE} }
+\newcommand{\pic}[1]{(Рис.~#1)}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\TBD
+В статье описывается процесс разработки проблемно-ориентированного автоматного языка программирования в среде "<MPS">. Рассмотрены вопросы описания абстрактного и конкретного синтаксиса языка, его системы типов
+\end{abstract}
+
+\tableofcontents
+
+\include{actual}
+\include{existingProblems}
+\include{mpsStructure}
+\include{javaPlatform}
+\include{execution}
+
+\TBD Язык smodelLanguage — расширение baseLanguage для манипулирования моделями
+\TBD Язык collectionLanguage — функциональное расширение baseLanguage для работы с коллекциями
+\TBD Язык quotation — расширение baseLanguage для создания фрагментов АСТ-дерева.
+
+\include{existingSMLangs}
+
+\section{Язык "<jetbrains.mps.baseLanguage.stateMachine">}
+\include{features}
+\include{structure}
+
+\TBD Модель редакторов — конкретный синтаксис
+\TBD Модель ограничений — несинтаксические ограничения на модель
+\TBD Модели генераторов — операционная семантика языка
+\TBD Модель системы типов — система типов языка и другие элементы неоперационной семантики
+\TBD Модель поведения — вспомогательные методы для работы с метамоделью
+\TBD Модель расширений — специфические для языка расширения среды MPS
+
+\begin{thebibliography}{99}
+\bibitem{dmitriev}
+Dmitriev~S. Language oriented programming: The next programming paradigm. JetBrains, 2004.
+
+\bibitem{brooks}
+Frederick~P. Brooks.
+\newblock {\em The Mythical Man-Month}.
+\newblock Addison Wesley, Reading, Mass., 1975.
+
+\bibitem{gost12207-99}
+ГОСТ Р ИСО/МЭК 12207-99. Информационная технология. Процессы жизненного цикла программных средств
+
+\bibitem{evolutionModel}
+Васютович~В., Самотохин~С., Никифоров~Г.
+Регламентация жизненного цикла программных средств.
+--- Открытые ситемы, Директор ИС, \#07--08/2000.
+
+\bibitem{fowler01}
+M. Fowler. Language Workbenches: The Killer-App for Domain Specific Languages? --- 2005.
+
+\bibitem{redDragon}
+Aho, A.~V., Hopcroft, J.~E., and Ullman, J.~D. (1974).
+\newblock {\em The Design and Analysis of Computer Algorithms}.
+\newblock Addision-Wesley, Reading, MA.
+
+\bibitem{hanter}
+Хантер~Р. Основные концепции компиляторов. М.: Вильямс, 2002. 256~с.
+
+\bibitem{intellijIDEA}
+Давыдов~С., Ефимов~А. IntelliJ IDEA.
+Профессиональное программирование на Java. Наиболее полное руководство.
+СПб.: БХВ-Петербург, 2005. 800~с.
+
+\bibitem{fowler02}
+M.~Fowler.
+A Language Workbench in Action --- MPS.
+2005.
+
+\bibitem{portableSourceCode}
+E.~Mamas, K.~Kontogiannis.
+Towards portable source code representations using XML
+// Proc. Working Conf. Reverse Engineering (WCRE), pp.~172--182, Nov.~2000.
+
+\bibitem{plopAST}
+J.~Jones.
+Abstract Syntax Tree Implementation Idioms
+// PLoP --- 2003.
+
+\bibitem{myAutocompletion}
+Гуров~В.С., Мазин~М.А., Шалыто~А.А.
+Автоматическое завершение ввода условий в диаграммах состояний
+//Информационно-управляющие системы, 2008. №~1 (32), c.~24--33.
+
+\bibitem{fowler03}
+M.~Fowler.
+Refactoring: Improving the Design of Existing Code.
+Addison-Wesley, 1999.
+
+\bibitem{simonyi}
+C.~Simonyi.
+The Death of Computer Languages, the Birth of Intentional Programming
+//The Future of Software, Univ. of Newcastle upon Tyne, England, Dept. of Computing Science, 1995.
+
+\bibitem{myUMLSwitchEclipse}
+Гуров~В.~С., Мазин~М.~А., Нарвский~А.~С., Шалыто~А.~А.
+UML. SWITCH-технология. Eclipse
+//Информационно-управляющие системы, 2004. №~6, c.~12--17.
+
+\bibitem{gmf}
+J.~Richley.
+GMF: Beyond the Wizards
+// ONJava --- 2007.
+
+\bibitem{msdsl}
+Microsoft Domain-Specific Language (DSL) Tools, May
+2005 CTP Release for Visual Studio 2005 Beta 2.
+http://lab.msdn.microsoft.com/teamsystem/workshop/dsltools/default.aspx
+
+\bibitem{eckel}
+Эккель~Б.
+Философия Java.
+СПб.: Питер, 2003. с.~976.
+
+\bibitem{java5spec}
+J.~Gosling, B.~Joy, G.~Steele, G.~Bracha.
+\newblock {\em The Java Language Specification, Third Edition},
+Addison Wesley, 2005.
+
+\bibitem{semantics}
+M.~Hennessy.
+Semantics of Programming Languages.
+Wiley, 1990.
+
+\bibitem{cormen}
+T.~H.~Cormen, C.~E.~Leiserson, R.~L.~Rivest.
+\newblock {\em Introduction to Algorithms}.
+\newblock {MIT} Press, McGraw-Hill Book Company, 1990.
+
+\bibitem{meyer}
+Мейер~Б.
+Объектно-ориентированное конструирование программных систем.
+М.: Русская Редакция, 2005. с.~1204.
+
+\bibitem{nepeyvoda}
+Непейвода~Н.~Н.
+Стили и методы программирования. Курс лекций. Учебное пособие.
+М.: ИнтУИТ, 2005.
+
+\bibitem{shalyto01}
+Шалыто~А.~А.
+SWITCH-технология. Алгоритмизация и программирование задач логического управления.
+СПб.: Наука, 1998. с.~628.
+
+\bibitem{shalyto02}
+Шалыто~А.~А., Туккель~Н.~И.
+SWITCH-технология --- автоматный подход к созданию программного обеспечения "реактивных" систем
+//Программирование. 2001. No~5, с.~45--62. http://is.ifmo.ru/ (раздел "<Статьи">).
+
+\bibitem{lagunov}
+Лагунов~И.~А.
+Разработка текстового языка автоматного программирования и его реализация для инструментального средства UniMod на основе автоматного подхода.
+2008.
+
+\bibitem{shamgunov}
+Шамгунов~Н.~Н., Корнеев~Г.~А., Шалыто~А.~А.
+State Machine --- расширение языка Java для эффективной реализации автоматов
+//Информационно-управляющие системы, 2005. №~1, с.~16--24.
+
+\bibitem{smc}
+SMC --- State Machine Compiler. http://smc.sourceforge.net/.
+
+\bibitem{tsimbaluk}
+Цымбалюк~Е.~А.
+Текстовый язык автоматного программирования ТАВР.
+2008.
+
+\bibitem{scxml}
+State Chart XML (SCXML): State Machine Notation for Control Abstraction.
+W3C Working Draft 16 May 2008.
+http://www.w3.org/TR/2008/WD-scxml-20080516/
+
+\bibitem{ragel}
+A.~Thurston.
+Parsing Computer Languages with an Automaton Compiled from a Single Regular Expression.
+In 11th International Conference on Implementation and Application of Automata (CIAA 2006), Lecture Notes in Computer Science, volume 4094, pp. 285--286, Taipei, Taiwan, August 2006.
+
+\bibitem{gof}
+E.~Gamma, R.~Helm, R.~Johnson, J.~Vlissides.
+\newblock {\em Design Patterns: Elements of Reusable Object-Oriented Software}.
+\newblock Addison Wesley, Reading, Mass., 1995.
+
+\bibitem{harel}
+D.~Harel.
+\newblock {\em Statecharts: A visual formalism for complex systems}.
+\newblock {Science of Computer Programming}, 8:231--274, 1987.
+
+\bibitem{knuth}
+Кнут~Д.
+Искусство программирования. Т.~1:~Основные алгоритмы.
+М.: Вильямс, 2001. с.~712.
+
+\bibitem{naumov}
+Наумов~Л.~А., Шалыто~А.~А.
+Искусство программирования лифта. Объектно-ориентированное программирование с явным выделением состояний //Информационно-управляющие системы. 2003. №~6, с.38--49;
+Мир ПК --- Диск. 2004. №~2, с~18.
+Статья размещена на сайте http://is.ifmo.ru.
+
+\bibitem{uml}
+Буч~Г., Рамбо~Г., Якобсон~И.
+UML. Руководство пользователя.
+М.: ДМК, 2000. --- 358 c.
+
+\end{thebibliography}
+
+
+\end{document}
