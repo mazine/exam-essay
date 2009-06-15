@@ -1,20 +1,22 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,12pt]{article}
+\usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
+%\usepackage{pscyr}
+\usepackage{afterpage}
+\usepackage{indentfirst}
 \usepackage[english, russian]{babel}
 \usepackage[pdftex]{graphicx}
-%opening
-\title{Разработка языка для автоматного программирования в среде  MPS}
-\author{Мазин М. А., Гуров В. С.}
+\graphicspath{{images/}}
+\usepackage[perpage,symbol]{footmisc}
+\usepackage{fancyhdr}
 
-\newcommand{\TBD}{\par{\LARGE TO BE DONE} }
-\newcommand{\pic}[1]{(Рис.~#1)}
+
+\include{commands}
 
 \begin{document}
-\maketitle
-
+\include{title}
 \begin{abstract}
-\TBD
-В статье описывается процесс разработки проблемно-ориентированного автоматного языка программирования в среде "<MPS">. Рассмотрены вопросы описания абстрактного и конкретного синтаксиса языка, его системы типов
+В реферате описывается процесс разработки проблемно"=ориентированного автоматного языка программирования в среде \MPS{}. Рассмотрены вопросы описания абстрактного и конкретного синтаксиса языка, его системы типов, генерации целевого кода. Приведен обзор существующих языков поддерживающих автоматное программирование.
 \end{abstract}
 
 \tableofcontents
@@ -31,7 +33,7 @@
 
 \include{existingSMLangs}
 
-\section{Язык "<jetbrains.mps.baseLanguage.stateMachine">}
+\section{Язык \term{jetbrains.mps.baseLanguage.stateMachine}}
 \include{features}
 \include{structure}
 
